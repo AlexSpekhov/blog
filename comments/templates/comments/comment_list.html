@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+
+{% block title %}
+    <h2>Список комментариев</h2>
+    <ol class="breadcrumb">
+        <li><a href="{% url 'core:mainpage' %}">На главную</a></li>
+        <li><a href="#" class="active">Список комментариев</a></li>
+    </ol>
+{% endblock %}
+
+
+{% block content %}
+    {% for comment in comment_list %}
+        <div class="panel panel-default">
+            <div class="panel-body">
+                {{ comment.content }}
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-xs-6">
+                        {{ comment.author }}
+                    </div>
+                    <div class="col-xs-6" align="right">
+                        {{ comment.creation_time }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

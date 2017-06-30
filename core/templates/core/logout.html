@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    <h2>Добро пожаловать отсюда</h2>
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'core:mainpage' %}">
+        <h2 align="center">Вернуться на главную</h2>
+    </a>
+{% endblock %}
